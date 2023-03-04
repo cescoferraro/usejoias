@@ -43,8 +43,8 @@ function App() {
   });
   const innerHeight = window.window.innerHeight;
   const innerWidth = window.window.innerWidth;
-  const strokeWidth = round(state.stroke / number) / devicePixelRatio;
-  const outerWidth = round(state.size / number) / devicePixelRatio;
+  const strokeWidth = round(state.stroke / number / devicePixelRatio);
+  const outerWidth = round(state.size / number / devicePixelRatio);
   return (
     <Box
       sx={{
@@ -105,7 +105,14 @@ function App() {
         </svg>
       </Hammer>
 
-      <Paper style={{ position: "absolute", top: "10%", left: "10%" }}>
+      <Paper
+        style={{
+          maxWidth: "80vw",
+          position: "absolute",
+          top: "10%",
+          left: "10%",
+        }}
+      >
         <Box display="flex">
           <Box>
             <NewComponent
